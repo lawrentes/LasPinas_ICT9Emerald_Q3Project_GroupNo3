@@ -19,125 +19,144 @@
 
 <!-- Navbar, please copy this to all pages. -->
 
-<main class="main-content">
+<main class="main-content" style="height: calc(100vh - 56px); overflow: hidden; display: flex; flex-direction: column;">
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="navbar">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="navbar">
 
-    <div class="container-fluid">
+        <div class="container-fluid">
 
-        <a class="navbar-brand" href="index.html"> <img src="metrio.png" alt="logo" height="50px" class="rounded"> </a>
+            <a class="navbar-brand" href="index.html"> <img src="metrio.png" alt="logo" height="50px" class="rounded">
+            </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"> </span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"> </span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="homepage.html" target="_self"> Homepage </a>
-                </li>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html" target="_self"> Homepage </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html" target="_self"> Fare Matrix </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" target="_self"> Fare Matrix </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="registration.html" target="_self"> Log-In </a>
-                </li>
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registration.html" target="_self"> Log-In </a>
+                    </li>
+                </ul>
 
-            <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Search">
-                <button class="btn btn-warning" type="button"> Search
-                </button>
-            </form>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-warning" type="button"> Search
+                    </button>
+                </form>
+            </div>
+
         </div>
 
+    </nav>
+
+    <div class="row g-4 m-2">
+        <div class="col-12 col-md-12 col-lg-12" class="transparentdiv">
+            <div class=" p-3 border rounded bg-dark h-200">
+                <div class="container mt-3">
+                    <div class="row align-items-stretch flex-nowrap">
+
+                        <!-- Left Side Image UoU -->
+                        <div class="col-md-4 d-none d-md-flex flex-column align-items-center justify-content-center"
+                            style="min-height: 100%;">
+                            <img src="user.png" id="user" class="img-fluid rounded-circle mb-3"
+                                style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #ffc107;">
+                            <br>
+                            <label for="uploadImg" class="btn btn-warning">
+                                Upload Image
+                            </label>
+                            <input type="file" id="uploadImg" name="uploadImg" accept="image/*" style="display: none;"
+                                onchange="previewImage(event)">
+                        </div>
+
+
+                        <!-- Right Side: Form O_O -->
+                        <div class="col-12 col-md-8">
+                            <h2 class="text-warning">Registration</h2>
+                            <form id="formation"
+                                style="height: calc(100vh - 300px); overflow-y: auto; padding-right: 10px;">
+                                <div class="mb-3">
+                                    <label for="fname">First Name:</label>
+                                    <input type="text" class="form-control" id="fname" placeholder="Metrio" name="fname"
+                                        required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lname">Last Name:</label>
+                                    <input type="text" class="form-control" id="lname" placeholder="Transportation"
+                                        name="lname" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="age" class="form-label"> Age:</label>
+                                    <input type="number" id="quantity" name="quantity" min="12" max="100" required>
+                                </div>
+
+                                <h3>Account Details</h3>
+                                <div class="mb-3">
+                                    <label for="address">E-Mail Address:</label>
+                                    <input type="email" class="form-control" id="address" placeholder="metrio@gmail.com"
+                                        name="address" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pass">Password:</label>
+                                    <input type="text" class="form-control" id="pass" placeholder="epicpass123"
+                                        name="pass" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="uname">Username:</label>
+                                    <input type="text" class="form-control" id="uname" placeholder="farematrix"
+                                        name="uname" required>
+                                </div>
+
+                                <div class="form-check mb-3">
+                                    <input type="checkbox" class="form-check-input" id="agree" name="agree"
+                                        value="checked" required>
+                                    <label class="form-check-label" for="agree">I agree to the terms and
+                                        conditions.</label>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-warning" onclick="showDiv()">Create my
+                                        account</button>
+                                </div>
+                                <div id="confirm" style="display:none;" class="mb-3">
+                                    <p
+                                        style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white">
+                                        You've registered to Metrio. Verifying account..
+                                    </p>
+                                    <button class="btn btn-warning" id="close" type="button"
+                                        style="margin-left: 10px;">&times;</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <script src="proj.js">
+                </script>
+            </div>
+        </div>
     </div>
-
-</nav>
-
-<div class="row g-4 m-2">
-    <div class="col-12 col-md-12 col-lg-12" class="transparentdiv">
-        <div class=" p-3 border rounded bg-dark h-200">
-            <div class="container mt-3">
-    <div class="row align-items-stretch">
-
-        <!-- Left Side Image UoU -->
-        <div class="col-md-4 d-flex flex-column align-items-center justify-content-center" style="min-height: 100%;">
-            <img src="user.png" id="user" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #ffc107;">
-            <br>
-            <label for="uploadImg" class="btn btn-warning">
-                Upload Image
-            </label>
-            <input type="file" id="uploadImg" name="uploadImg" accept="image/*" style="display: none;"
-                onchange="previewImage(event)">
-        </div>
-
-        <!-- Right Side: Form O_O -->
-        <div class="col-md-8">
-            <h2 class="text-warning">Registration</h2>
-            <form id="formation">
-                <div class="mb-3">
-                    <label for="fname">First Name:</label>
-                    <input type="text" class="form-control" id="fname" placeholder="Metrio" name="fname" required>
-                </div>
-                <div class="mb-3">
-                    <label for="lname">Last Name:</label>
-                    <input type="text" class="form-control" id="lname" placeholder="Transportation" name="lname" required>
-                </div>
-                <div class="mb-3">
-                    <label for="age" class="form-label"> Age:</label> <input type="number" id="quantity" name="quantity" min="12" max="100" required>
-                </div>
-
-                <h3>Account Details</h3>
-                <div class="mb-3">
-                    <label for="address">E-Mail Address:</label>
-                    <input type="email" class="form-control" id="address" placeholder="metrio@gmail.com" name="address" required>
-                </div>
-                  <div class="mb-3">
-                    <label for="pass">Password:</label>
-                    <input type="text" class="form-control" id="pass" placeholder="epicpass123" name="pass" required>
-                </div>
-                  <div class="mb-3">
-                    <label for="uname">Username:</label>
-                    <input type="text" class="form-control" id="uname" placeholder="farematrix" name="uname" required>
-                </div>
-
-             
-
-                <div class="form-check mb-3">
-                    <input type="checkbox" class="form-check-input" id="agree" name="agree" value="checked" required>
-                    <label class="form-check-label" for="agree">I agree to the terms and conditions.</label>
-                </div>
-
-
-                <div class="text-center">
-                    <button type="submit" class="btn btn-warning" onclick="showDiv()">Create my account</button>
-                </div>
-                <div id="confirm" style="display:none;" class="mb-3">
-                 <p style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white"> You've registered to Metrio. Verifying account.. </p> 
-                  <button class="btn btn-warning" id="close" type="button" style="margin-left: 10px;">&times;</button>
-            </form>
-        </div>
-
     </div>
-</div>
-<script src="proj.js">    
-</script>
-</div>
-</div>
-</div>
-</div>
-</div>
+    </div>
 </main>
 
-<footer>
-<div class="footer">
- <img src="metrio.png" style="width: 50px;">  <p><small><a href="https://obmontessori.orangeapps.ph/landing/obmontessori/" style="color: white;">M e t r i o </small> Transpo. | 2026</a></p>
-</div>
+<footer style="position: fixed; bottom: 0; width: 100%; z-index: 999;">
+    <div class="footer">
+        <img src="metrio.png" style="width: 50px;">
+        <p><small><a href="https://obmontessori.orangeapps.ph/landing/obmontessori/" style="color: white;">M e t r i o
+            </small> Transpo. | 2026</a></p>
+    </div>
 </footer>
 
 </body>
+
 </html>
 </form>
