@@ -51,103 +51,171 @@
 
 </nav>
 
-<div class="row g-4 m-2">
- <div class="col-12 col-md-12 col-lg-12" class="transparentdiv">
-        <div class=" p-3 border rounded bg-dark h-200">
-            
-       <div class="container mt-3">
-<h2 class="text-warning" style="text-align: center;">Fare Matrix <img  src="metrio.png"    style="width: 50px;" class="rounded-circle shadow col-lg-2 col-md-2 col-2">
- </h2>
-<form>
+<main class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="bg-dark bg-opacity-75 text-white p-5 rounded shadow-lg border border-secondary">
+                
+                <h2 class="text-center mb-5 fw-bold">Metrio Fare Matrix</h2>
 
-        <label for="loc" class="form-label">Pickup Location:</label>
-    <select class="form-select" id="loc" name="loc" required>
-    <option value="10">Baclaran</option>
-    <option value="20">EDSA</option>
-    <option value="30">Libertad</option>
-    <option value="40">Gil Puyat</option>
-    <option value="50">Vito Cruz</option>
-    <option value="60">Quirino Ave</option>
-    <option value="70">Pedro Gil</option>
-    <option value="80">United Nations</option>
-    <option value="90">Central Terminal</option>
-    <option value="100">Carriedo</option>
-    <option value="110">Doroteo Jose</option>
-    <option value="120">Bambang</option>
-    <option value="130">Tayumang</option>
-    <option value="140">Blumentritt</option>
-    <option value="150">Abad Santos</option>
-    <option value="160">R. Papa</option>
-    <option value="170">5th Ave.</option>
-    <option value="180">Monumento</option>
-    <option value="190">Malvar</option>
-    <option value="200">Balintawak</option>
-    <option value="210">Roosevelt</option>
-    </select>
-    <br>
-        <label for="loc" class="form-label">Drop-off Location:</label>
-    <select class="form-select" id="loc" name="dest" required>
-    <option value="10">Baclaran</option>
-    <option value="20">EDSA</option>
-    <option value="30">Libertad</option>
-    <option value="40">Gil Puyat</option>
-    <option value="50">Vito Cruz</option>
-    <option value="60">Quirino Ave</option>
-    <option value="70">Pedro Gil</option>
-    <option value="80">United Nations</option>
-    <option value="90">Central Terminal</option>
-    <option value="100">Carriedo</option>
-    <option value="110">Doroteo Jose</option>
-    <option value="120">Bambang</option>
-    <option value="130">Tayumang</option>
-    <option value="140">Blumentritt</option>
-    <option value="150">Abad Santos</option>
-    <option value="160">R. Papa</option>
-    <option value="170">5th Ave.</option>
-    <option value="180">Monumento</option>
-    <option value="190">Malvar</option>
-    <option value="200">Balintawak</option>
-    <option value="210">Roosevelt</option>
-    </select>
-    <br>
-    <div style="text-align: center;">
-        <button type="button" class="btn
-        btn-warning" id="reg" name="reg">Regular Fare</button>
-    <br>
-        </form>
-        <p id="output" style="color: gold;"> Fare: </p>
+                <div class="row align-items-start g-4">
+                    <div class="col-12 col-md-3 text-center">
+                        <img src="transit.png" alt="Transit Map" class="img-fluid rounded shadow" style="max-width: 200px;">
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label class="fw-bold mb-1">PICK-UP</label>
+                        <select class="form-control mb-3" style="width: 400px;" id="pickup">
+						<option class="fw-bold" value="0" selected disabled>Select an option</option>
+							<option class="fw-bold" value="North Avenue">North Avenue</option>
+                            <option class="fw-bold" value="Quezon Avenue">Quezon Avenue</option>
+                            <option class="fw-bold" value="Kamuning">Kamuning</option>
+                            <option class="fw-bold" value="Araneta Center-Cubao">Araneta Center-Cubao</option>
+                            <option class="fw-bold" value="Santolan-Annapolis">Santolan-Annapolis</option>
+                            <option class="fw-bold" value="Ortigas">Ortigas</option>
+                            <option class="fw-bold" value="Shaw Boulevard">Shaw Boulevard</option>
+                            <option class="fw-bold" value="Boni">Boni</option>
+                            <option class="fw-bold" value="Guadalupe">Guadalupe</option>
+                            <option class="fw-bold" value="Buendia">Buendia</option>
+                            <option class="fw-bold" value="Ayala">Ayala</option>
+                            <option class="fw-bold" value="Magallanes">Magallanes</option>
+                            <option class="fw-bold" value="Taft Avenue">Taft Avenue</option>
+                    </select>
+
+                        <div class="mb-4">
+                            <label class="fw-bold mb-1">DROP-OFF</label>
+                            <select class="form-control mb-3" style="width: 400px;" id="dropoff">
+                        <option class="fw-bold" value="0" selected disabled>Select an option</option>
+                            <option class="fw-bold" value="North Avenue">North Avenue</option>
+                            <option class="fw-bold" value="Quezon Avenue">Quezon Avenue</option>
+                            <option class="fw-bold" value="Kamuning">Kamuning</option>
+                            <option class="fw-bold" value="Araneta Center-Cubao">Araneta Center-Cubao</option>
+                            <option class="fw-bold" value="Santolan-Annapolis">Santolan-Annapolis</option>
+                            <option class="fw-bold" value="Ortigas">Ortigas</option>
+                            <option class="fw-bold" value="Shaw Boulevard">Shaw Boulevard</option>
+                            <option class="fw-bold" value="Boni">Boni</option>
+                            <option class="fw-bold" value="Guadalupe">Guadalupe</option>
+                            <option class="fw-bold" value="Buendia">Buendia</option>
+                            <option class="fw-bold" value="Ayala">Ayala</option>
+                            <option class="fw-bold" value="Magallanes">Magallanes</option>
+                            <option class="fw-bold" value="Taft Avenue">Taft Avenue</option>
+                </select>
+                        <div class="btn-group w-100 shadow">
+                        <button class="btn btn-warning w-100" onclick="processFare(false)"> Regular Fare </button>
+                        <button class="btn btn-dark w-100" onclick="processFare(true)"> Discounted Fare </button>
+                        </div>
+						</div>
+
+                        <div class="col-12 col-md-3"><p class="mt-4 fw-bold fs-4 text-center text-warning" id="result"></p></div>
+				                       
+ 
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
-    </div>
-    </main>
-
-<p id="output"></p>
-
-<script>
+</main>
 
 
 
 
+                <script>
+                    function discountedFare() {
+                        const pickup = Number(document.getElementById("distance1").value);
+                        const dropoff = Number(document.getElementById("distance2").value);
 
+                        let ops = (Number(pickup) + Number(dropoff)) * Number(0.2)
+                        let ops2 = Number(pickup) + Number(dropoff)
+                        let total = ops2 - ops;
 
+                        document.getElementById("result").innerHTML = "Transportation Fee: " + total;
+                    }
 
+                    function regularFare() {
+                        const pickup = Number(document.getElementById("distance1").value);
+                        const dropoff = Number(document.getElementById("distance2").value);
 
+                        let total = pickup + dropoff;
 
+                        document.getElementById("result").innerHTML = "Transportation Fee: " + total;
+                    }
+					
+/**
+ * Distances based on kilometers from North Avenue .
+ * Source: https://www.metrolinemap.com/metro/manila/ 
+ */
+const mrt3Distances = {
+    "North Avenue": 0.0,
+    "Quezon Avenue": 1.2,
+    "Kamuning": 2.1,
+    "Araneta Center-Cubao": 4.0,
+    "Santolan-Annapolis": 5.5,
+    "Ortigas": 7.8,
+    "Shaw Boulevard": 8.6,
+    "Boni": 9.6,
+    "Guadalupe": 10.4,
+    "Buendia": 12.4,
+    "Ayala": 13.4,
+    "Magallanes": 14.6,
+    "Taft Avenue": 16.9
+};
 
+/**
+ * FARE CALCULATION 
+ * Uses variables and operators to perform calculations
+ */
+function calculateFare(distance, isDiscounted) {
+    // Assigning values to variables as per instructions
+    const baseFare = 50;     // Minimum fare including first 2KM
+    const perKMrate = 15;    // Cost per kilometer beyond 2KM
+    const baseKM = 2;        // Distance included in base fare
+    
+    let totalFare = 0;
 
+    // Use Math.max to compute absolute
+    if (distance <= baseKM) {
+        totalFare = baseFare;
+    } else {
+        // Calculate only the distance beyond the first 2KM
+        let extraDistance = distance - baseKM;
+        totalFare = baseFare + (extraDistance * perKMrate);
+    }
 
+    // Apply 20% discount 
+    if (isDiscounted) {
+        totalFare = totalFare * 0.80; // Regular rate less 20%
+    }
 
+    // Return the final value rounded to 2 decimal 
+    return totalFare.toFixed(2);
+}
 
+/**
+ * Displays information when triggered by button actions
+ */
+function processFare(isDiscounted) {
+    // Get station names from the HTML select elements
+    const startStation = document.getElementById('pickup').value;
+    const endStation = document.getElementById('dropoff').value;
 
+    // Retrieve distances from the mapping object
+    const startKM = mrt3Distances[startStation];
+    const endKM = mrt3Distances[endStation];
 
+    // Calculate total distance traveled using Math.abs 
+    const totalDistance = Math.abs(endKM - startKM);
+
+    // Call the calculation logic
+    const finalFare = calculateFare(totalDistance, isDiscounted);
+
+    // Display the result using innerHTML as required 
+    document.getElementById('result').innerHTML = "Metrio Fare: " + finalFare;
+}
+					
 </script>
-
-
-
-
-
-
+    
 <footer>
 <div class="footer">
  <img src="metrio.png" style="width: 50px;">  <p><small><a href="https://obmontessori.orangeapps.ph/landing/obmontessori/" style="color: white;">M e t r i o </small> Transpo. | 2026</a></p>
@@ -157,3 +225,4 @@
 </body>
 
 </html>
+
