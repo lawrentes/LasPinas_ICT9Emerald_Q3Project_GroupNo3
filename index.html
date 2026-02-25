@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metrio - Fare Guide</title>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Metrio Fare Guide</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+ 
    
 
 <!-- Navbar, please copy this to all pages. -->
@@ -65,17 +67,20 @@
         <div class="col-lg-10">
             <div class="bg-dark bg-opacity-75 text-white p-5 rounded shadow-lg border border-secondary">
                 
-                <h2 class="text-center mb-5 fw-bold">Metrio Fare Matrix</h2>
+                <div class="d-flex justify-content-center align-items-center gap-2 bg-dark rounded">
+                    <h2 class="mb-0 text-warning" id="title">Metrio</h2>
+                    <h2 class="mb-0">Fare Matrix</h2>
+                </div>
 
-                <div class="row align-items-start g-4">
-                    <div class="col-12 col-md-3 text-center d-none d-xl-block">
+                <div class="row align-items-start g-4 mt-3">
+                    <div class="col-12 col-md-3 text-center">
                         <img src="transit.png" alt="Transit Map" class="img-fluid rounded shadow" style="max-width: 200px;">
                     </div>
 
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="fw-bold mb-1">PICK-UP</label>
-                        <select class="form-control mb-3 w-100"  id="pickup">
+                        <select class="form-control mb-3"  id="pickup">
 						<option class="fw-bold" value="0" selected disabled>Select an option</option>
 							<option class="fw-bold" value="North Avenue">North Avenue</option>
                             <option class="fw-bold" value="Quezon Avenue">Quezon Avenue</option>
@@ -94,7 +99,7 @@
 
                         <div class="mb-4">
                             <label class="fw-bold mb-1">DROP-OFF</label>
-                            <select class="form-control mb-3 w-100" id="dropoff">
+                            <select class="form-control mb-3"  id="dropoff">
                         <option class="fw-bold" value="0" selected disabled>Select an option</option>
                             <option class="fw-bold" value="North Avenue">North Avenue</option>
                             <option class="fw-bold" value="Quezon Avenue">Quezon Avenue</option>
@@ -116,13 +121,16 @@
                         </div>
 						</div>
 
-                        <div class="col-12 col-md-3"><p class="mt-4 fw-bold fs-4 text-center text-warning" id="result"></p></div>
+                       
 				                       
  
                     </div>
                 </div>
+					<div class="col-12 col-md-3"><p class="mt-4 fw-bold fs-4 text-center bg-warning text-dark height: 200px width: 200px;" id="result"></p></div>	 
 
             </div>
+					
+			
         </div>
     </div>
 </main>
@@ -130,26 +138,7 @@
 
 
 
-                <script>
-                    function discountedFare() {
-                        const pickup = Number(document.getElementById("distance1").value);
-                        const dropoff = Number(document.getElementById("distance2").value);
-
-                        let ops = (Number(pickup) + Number(dropoff)) * Number(0.2)
-                        let ops2 = Number(pickup) + Number(dropoff)
-                        let total = ops2 - ops;
-
-                        document.getElementById("result").innerHTML = "Transportation Fee: " + total;
-                    }
-
-                    function regularFare() {
-                        const pickup = Number(document.getElementById("distance1").value);
-                        const dropoff = Number(document.getElementById("distance2").value);
-
-                        let total = pickup + dropoff;
-
-                        document.getElementById("result").innerHTML = "Transportation Fee: " + total;
-                    }
+<script>
 					
 /**
  * Distances based on kilometers from North Avenue .
@@ -221,19 +210,15 @@ function processFare(isDiscounted) {
 
     // Display the result using innerHTML as required 
     document.getElementById('result').innerHTML = "Metrio Fare: " + finalFare;
-
-        /* yay.. now itis cleane.. */
 }
 					
-</script>
-    
+                </script>
+
 <footer>
-<div class="footer">
- <img src="metrio.png" style="width: 50px;">  <p><small><a href="https://obmontessori.orangeapps.ph/landing/obmontessori/" style="color: white;">M e t r i o </small> Transpo. | 2026</a></p>
-</div>
+    <div class="footer">
+    <img src="metrio.png" style="width: 50px;">  <p><small><a href="https://obmontessori.orangeapps.ph/landing/obmontessori/" style="color: white;">M e t r i o </small> Transpo. | 2026</a></p>
+    </div>
 </footer>
     
 </body>
-
 </html>
-
