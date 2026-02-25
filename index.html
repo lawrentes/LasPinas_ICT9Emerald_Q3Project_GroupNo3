@@ -13,6 +13,8 @@
 
 <!-- Navbar, please copy this to all pages. -->
 
+<main class="main-content">
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="navbar">
 
     <div class="container-fluid">
@@ -48,27 +50,23 @@
     </div>
 
 </nav>
-<!-- end -->
 
 <main class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="bg-dark bg-opacity-75 text-white p-5 rounded shadow-lg border border-secondary">
                 
-                <div class="d-flex justify-content-center align-items-center gap-2 md-5 bg-black rounded">
-                    <h2 class="mb-0 text-warning">Metrio</h2>
-                    <h2 class="mb-0">Fare Matrix</h2>
-                </div>
+                <h2 class="text-center mb-5 fw-bold">Metrio Fare Matrix</h2>
 
-                <div class="row align-items-start g-4 mt-3">
-                    <div class="col-12 col-md-3 text-center">
+                <div class="row align-items-start g-4">
+                    <div class="col-12 col-md-3 text-center d-none d-xl-block">
                         <img src="transit.png" alt="Transit Map" class="img-fluid rounded shadow" style="max-width: 200px;">
                     </div>
 
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="fw-bold mb-1">PICK-UP</label>
-                        <select class="form-control mb-3"  id="pickup">
+                        <select class="form-control mb-3 w-100"  id="pickup">
 						<option class="fw-bold" value="0" selected disabled>Select an option</option>
 							<option class="fw-bold" value="North Avenue">North Avenue</option>
                             <option class="fw-bold" value="Quezon Avenue">Quezon Avenue</option>
@@ -87,7 +85,7 @@
 
                         <div class="mb-4">
                             <label class="fw-bold mb-1">DROP-OFF</label>
-                            <select class="form-control mb-3"  id="dropoff">
+                            <select class="form-control mb-3 w-100" id="dropoff">
                         <option class="fw-bold" value="0" selected disabled>Select an option</option>
                             <option class="fw-bold" value="North Avenue">North Avenue</option>
                             <option class="fw-bold" value="Quezon Avenue">Quezon Avenue</option>
@@ -109,18 +107,13 @@
                         </div>
 						</div>
 
-                       
+                        <div class="col-12 col-md-3"><p class="mt-4 fw-bold fs-4 text-center text-warning" id="result"></p></div>
 				                       
  
                     </div>
                 </div>
-					<div class="col-12 col-md-3">
-                        <p class="mt-4 fw-bold fs-4 text-center bg-warning text-dark rounded" id="result"></p>
-                    </div>	 
 
             </div>
-					
-			
         </div>
     </div>
 </main>
@@ -129,7 +122,25 @@
 
 
                 <script>
+                    function discountedFare() {
+                        const pickup = Number(document.getElementById("distance1").value);
+                        const dropoff = Number(document.getElementById("distance2").value);
 
+                        let ops = (Number(pickup) + Number(dropoff)) * Number(0.2)
+                        let ops2 = Number(pickup) + Number(dropoff)
+                        let total = ops2 - ops;
+
+                        document.getElementById("result").innerHTML = "Transportation Fee: " + total;
+                    }
+
+                    function regularFare() {
+                        const pickup = Number(document.getElementById("distance1").value);
+                        const dropoff = Number(document.getElementById("distance2").value);
+
+                        let total = pickup + dropoff;
+
+                        document.getElementById("result").innerHTML = "Transportation Fee: " + total;
+                    }
 					
 /**
  * Distances based on kilometers from North Avenue .
@@ -203,7 +214,7 @@ function processFare(isDiscounted) {
     document.getElementById('result').innerHTML = "Metrio Fare: " + finalFare;
 }
 					
-                </script>
+</script>
     
 <footer>
 <div class="footer">
